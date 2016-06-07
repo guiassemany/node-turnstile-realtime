@@ -1,0 +1,6 @@
+src/bower_components/
+bower_components/
+node_modules/
+src/assets/js/app.js
+src/assets/js/templates.js
+src/assets/css/style.css

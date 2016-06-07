@@ -1,0 +1,81 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 col-sm-12">
+      <div class="well">
+        <div class="server-up">
+          <span class="server-status" type="up"></span>
+          <span class="server-name">Catraca 01</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-12">
+      <div class="well">
+        <div class="server-up">
+          <span class="server-status" type="up"></span>
+          <span class="server-name">Catraca 02</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-12">
+      <div class="well">
+        <div class="server-up">
+          <span class="server-status" type="up"></span>
+          <span class="server-name">Catraca 03</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-12">
+      <div class="well">
+        <div class="server-down">
+          <span class="server-status" type="down"></span>
+          <span class="server-name">Catraca 04</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h1>Acessos Recentes <small> Visitantes e Funcionários</small></h1>
+  <div class="row">
+    <div class="col-md-8">
+      <table class="table table-bordered table-striped table-hover">
+        <thead>
+          <tr>
+            <th>
+              Foto
+            </th>
+            <th>
+              Pessoa
+            </th>
+            <th>
+              Data e Hora
+            </th>
+            <th>
+              Sentido
+            </th>
+            <th>
+              Abatrack
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="movimentacao in home.movimentacoes">
+            <td>
+              foto
+            </td>
+            <td>
+              pessoa
+            </td>
+            <td>
+              {{movimentacao.dataAcesso}}
+            </td>
+            <td>
+              {{movimentacao.sentido}}
+            </td>
+            <td>
+              {{movimentacao.abaTrack}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
