@@ -2,32 +2,32 @@
   <div class="row">
     <div class="col-md-3 col-sm-12">
       <div class="well">
-        <div class="server-up">
-          <span class="server-status" type="up"></span>
+        <div ng-class="{'server-up': home.catraca1.online, 'server-down': !home.catraca1.online}">
+          <span class="server-status" type="{{home.catraca1.online === true ? 'up' : 'down'}}"></span>
           <span class="server-name">Catraca 01</span>
         </div>
       </div>
     </div>
     <div class="col-md-3 col-sm-12">
       <div class="well">
-        <div class="server-up">
-          <span class="server-status" type="up"></span>
+        <div ng-class="{'server-up': home.catraca2.online, 'server-down': !home.catraca2.online}">
+          <span class="server-status" type="{{home.catraca2.online === true ? 'up' : 'down'}}"></span>
           <span class="server-name">Catraca 02</span>
         </div>
       </div>
     </div>
     <div class="col-md-3 col-sm-12">
       <div class="well">
-        <div class="server-up">
-          <span class="server-status" type="up"></span>
+        <div ng-class="{'server-up': home.catraca3.online, 'server-down': !home.catraca3.online}">
+          <span class="server-status" type="{{home.catraca3.online === true ? 'up' : 'down'}}"></span>
           <span class="server-name">Catraca 03</span>
         </div>
       </div>
     </div>
     <div class="col-md-3 col-sm-12">
       <div class="well">
-        <div class="server-down">
-          <span class="server-status" type="down"></span>
+        <div ng-class="{'server-up': home.catraca4.online, 'server-down': !home.catraca4.online}">
+          <span class="server-status" type="{{home.catraca4.online === true ? 'up' : 'down'}}"></span>
           <span class="server-name">Catraca 04</span>
         </div>
       </div>
@@ -59,17 +59,18 @@
         </thead>
         <tbody>
           <tr ng-repeat="movimentacao in home.movimentacoes">
-            <td>
-              foto
+            <td id="foto">
+              <img ng-if="movimentacao.foto" ng-src="http://10.5.66.127/arquivos/cap/fotoPessoas/{{movimentacao.foto}}" style="width: 50px;"alt="" />
+              <img ng-if="!movimentacao.foto" ng-src="assets/img/bandeiraSP.png" style="width: 50px;"alt="" />
             </td>
             <td>
-              pessoa
+              {{movimentacao.nome}}
             </td>
             <td>
-              {{movimentacao.dataAcesso}}
+              {{movimentacao.dataHora}}
             </td>
             <td>
-              {{movimentacao.sentido}}
+              {{movimentacao.sentido == "E" ? "Entrada" : "Saída"}}
             </td>
             <td>
               {{movimentacao.abaTrack}}
