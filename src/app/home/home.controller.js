@@ -42,15 +42,23 @@
           CatracaSocket.on('catracas-online', function(data){
             if(data.indexOf(vm.catraca1.ip) > -1){
               vm.catraca1.online = true;
+            }else{
+              vm.catraca1.online = false;
             }
             if(data.indexOf(vm.catraca2.ip) > -1){
               vm.catraca2.online = true;
+            }else{
+              vm.catraca2.online = false;
             }
             if(data.indexOf(vm.catraca3.ip) > -1){
               vm.catraca3.online = true;
+            }else{
+              vm.catraca3.online = false;
             }
             if(data.indexOf(vm.catraca4.ip) > -1){
               vm.catraca4.online = true;
+            }else{
+              vm.catraca4.online = false;
             }
           });
         }
